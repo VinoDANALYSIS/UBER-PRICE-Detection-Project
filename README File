@@ -1,0 +1,31 @@
+Uber Fare Prediction
+Objective
+The objective of this project is to design an algorithm which will tell the fare to be charged for a passenger.
+Problem Statement
+A fare calculator helps a customer in identifying the fare valid for the trip. They are often used by passengers who are new to a city or tourists to get an estimate of travel costs. 
+You are provided with a dataset with features like fare amount, pickup and drop latitude,longitude, pickup datetime, and so on.
+Dataset
+Here, you are provided with a train dataset with more than 5M observations. There are 8 columns in the dataset as follows:
+key
+fare_amount
+pickup_time
+pickup_longitude
+pickup_latitude
+dropoff_longitude
+dropoff_latitude
+passanger_count
+Steps
+Inorder to generate the machine learning models, the following steps were taken on the dataset provided:
+Load a sample of the train dataset
+Convert the pickup_time to a DateTime format.
+Check for the unusual values. For example, the pickup_longitude and latitude had some large values. Similarly, there was some negative fare amounts in the dataframe.
+Drop observations where the latitudes and longitudes are not in the decided ranges.
+Check for missing values and drop the rows with missing values.
+Extract days, weekdays, month and years from the datetime column.
+Calculate distance from the dropoff and pickup latitudes and longitudes.
+Drop observations where the distance is zero.
+Machine Learning Models
+Since this is a regression problem, we have used few models :Linear Regression,Random Forest Regression and XGBoost Regression models.
+To measure the performance of the models, we used the Root Mean Squared Error
+XGB Regression,with RMSE(XGB RMSE: 2.7679176885517296),performed better than Random Forest (RMSE: 2.806420527877298) 
+Linear Regression (LR RMSE: 4.2948927509005586) and hence we chose it as our final model.
